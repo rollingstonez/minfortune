@@ -4,15 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>민원장 철학원 | 사주·궁합·타로·심리상담 (분당 야탑)</title>
-<meta name="description" content="종로 적선동 40년의 전통, 이제 분당 야탑에서. 음양오행 동양철학으로 사주·궁합·타로·개명·심리상담을 봐드립니다. 야탑역 도보 3분. 전화예약 010-5750-3883">
+<meta name="description" content="종로 적선동 40년의 전통, 이제 분당 야탑에서. 음양오행 동양철학으로 사주·궁합·타로·개명·심리상담을 봐드립니다. 야탑역 2번출구 도보 3분. 전화예약 010-5750-3883">
 <meta name="keywords" content="민원장 철학원, 야탑 사주, 분당 사주, 야탑역 철학관, 궁합, 타로, 작명, 개명, 택일, 심리상담">
 <link rel="canonical" href="https://minfortune.kr/">
-<meta name="theme-color" content="#1c1a17">
+<meta name="theme-color" content="#2c2557">
 <meta name="format-detection" content="telephone=yes">
 
 <meta property="og:site_name" content="민원장 철학원">
 <meta property="og:title" content="민원장 철학원 | 사주·궁합·타로 (분당 야탑)">
-<meta property="og:description" content="운명의 문을 열어드립니다 — 종로 적선동 40년의 전통, 이제 야탑역에서. 사주·궁합·타로·심리상담">
+<meta property="og:description" content="운명의 문을 열어드립니다 — 종로 적선동 40년의 전통, 이제 야탑역에서 만나보세요.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://minfortune.kr/">
 <meta property="og:locale" content="ko_KR">
@@ -27,7 +27,8 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="images/hero1.jpg" fetchpriority="high">
 
 <script type="application/ld+json">
 {
@@ -36,8 +37,9 @@
   "@id": "https://minfortune.kr/#business",
   "name": "민원장 철학원",
   "url": "https://minfortune.kr/",
-  "image": "https://minfortune.kr/images/og.jpg",
+  "image": "https://minfortune.kr/images/signboard.jpg",
   "logo": "https://minfortune.kr/images/logo.jpg",
+  "slogan": "운명의 문을 열어드립니다",
   "description": "종로 적선동 40년의 전통을 이어온 민원장 철학원. 음양오행 동양철학을 바탕으로 사주·궁합·타로·작명·개명·택일과 심리상담을 함께 봐드립니다.",
   "telephone": "+82-10-5750-3883",
   "foundingDate": "1987",
@@ -67,259 +69,360 @@
 </script>
 <style>
   :root{
-    --ink:#1c1a17; --ink2:#3a352e; --cream:#f6f1e7; --paper:#fbf8f1;
-    --gold:#b58a3e; --gold-d:#96702c; --line:#e6dcc9; --muted:#6f665a;
+    --navy:#2c2557;        /* 원본 사이트 제목 색 */
+    --navy-d:#1e1940;
+    --body:#303030;
+    --muted:#6b6880;
+    --line:#e6e4ee;
+    --wash:#f5f4f9;
     --col:600px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{font-family:"Noto Sans KR",sans-serif;color:var(--ink);background:#e8e0d0;line-height:1.8;-webkit-font-smoothing:antialiased}
-  h1,h2,h3,.serif{font-family:"Nanum Myeongjo","Noto Sans KR",serif}
+  body{font-family:"Gowun Dodum","Noto Sans KR",sans-serif;color:var(--body);background:#dcdae6;
+       line-height:1.85;-webkit-font-smoothing:antialiased;word-break:keep-all}
   img{max-width:100%;display:block}
   a{color:inherit;text-decoration:none}
+  .batang{font-family:"Gowun Batang","Noto Sans KR",serif}
 
-  /* centered mobile column, centered on any screen */
-  /* NOTE: overflow-x:clip (not hidden) — `hidden` would make .page a scroll
-     container and break the sticky .topbar inside it. */
-  .page{max-width:var(--col);margin:0 auto;background:var(--cream);min-height:100vh;box-shadow:0 0 40px rgba(0,0,0,.12);overflow-x:clip}
-  .sec{padding:60px 24px;text-align:center}
-  .sec.alt{background:var(--paper)}
-  .eyebrow{display:inline-block;font-size:.78rem;letter-spacing:.34em;color:var(--gold-d);font-weight:700;margin-bottom:12px}
-  h2{font-size:1.72rem;font-weight:800;letter-spacing:-.01em;line-height:1.4}
-  h2 .u{color:var(--gold-d)}
-  .lead{color:var(--muted);margin-top:12px;font-size:1rem}
-  .divider{width:44px;height:2px;background:var(--gold);margin:18px auto 0;opacity:.6}
+  .page{max-width:var(--col);margin:0 auto;background:#fff;min-height:100vh;
+        box-shadow:0 0 40px rgba(30,25,64,.18);overflow-x:clip}
 
-  /* top bar */
-  .topbar{position:sticky;top:0;z-index:50;max-width:var(--col);margin:0 auto;background:rgba(28,26,23,.95);backdrop-filter:blur(6px);color:#f3ead7;border-bottom:1px solid rgba(181,138,62,.4)}
-  .topbar .in{display:flex;align-items:center;justify-content:center;gap:12px;height:54px;padding:0 16px}
-  .brand{display:flex;align-items:center;gap:9px;font-family:"Nanum Myeongjo",serif;font-weight:700;font-size:1.05rem}
-  .brand .yy{width:22px;height:22px;border-radius:50%;background:conic-gradient(#f3ead7 0 50%,#1c1a17 50% 100%);border:1px solid var(--gold)}
-  .call-top{margin-left:auto;display:inline-flex;align-items:center;gap:6px;background:var(--gold);color:#241d0f;font-weight:700;padding:8px 14px;border-radius:999px;font-size:.86rem}
+  /* ── 공통 섹션 ── */
+  .sec{padding:52px 24px;text-align:center}
+  .sec.wash{background:var(--wash)}
+  h2.t{font-family:"Gowun Batang","Noto Sans KR",serif;color:var(--navy);font-size:1.72rem;
+       font-weight:700;line-height:1.45;letter-spacing:-.01em}
+  h3.t{font-family:"Gowun Batang","Noto Sans KR",serif;color:var(--navy);font-size:1.34rem;
+       font-weight:700;line-height:1.5}
+  .rule{width:40px;height:2px;background:var(--navy);opacity:.35;margin:16px auto 0}
+  .lead{margin-top:16px;font-size:1rem;color:var(--body);line-height:1.9}
 
-  /* hero */
-  .hero{background:radial-gradient(600px 420px at 50% -6%,#2c2822 0,var(--ink) 62%);color:#f4ecdb;text-align:center;padding:56px 24px 62px;position:relative;overflow:hidden}
-  .hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 25%,rgba(181,138,62,.18),transparent 42%),radial-gradient(circle at 82% 78%,rgba(181,138,62,.13),transparent 42%)}
-  .hero>*{position:relative}
-  .hero .logo{width:104px;height:104px;margin:0 auto 20px;border-radius:50%;background:#fbf8f1;padding:9px;box-shadow:0 8px 28px rgba(0,0,0,.35)}
-  .hero h1{font-size:2.4rem;font-weight:800;letter-spacing:.05em}
-  .hero .sub{font-family:"Nanum Myeongjo",serif;font-size:1.24rem;color:#e6cf9a;margin-top:14px}
-  .hero .tradition{margin-top:14px;color:#d9c9a6;font-size:1rem;line-height:1.7}
-  .hero .value{margin-top:22px;border-top:1px solid rgba(230,207,154,.28);border-bottom:1px solid rgba(230,207,154,.28);padding:16px 4px;color:#f0e4c8;font-family:"Nanum Myeongjo",serif;font-size:1.05rem;line-height:1.7}
-  .cta-row{margin-top:26px;display:flex;flex-direction:column;gap:12px;align-items:center}
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:15px 30px;border-radius:999px;font-weight:700;font-size:1.05rem;transition:.15s;width:100%;max-width:320px}
-  .btn-gold{background:var(--gold);color:#241d0f}
-  .btn-gold:hover{background:#c99a49}
-  .btn-ghost{border:1.5px solid rgba(244,236,219,.5);color:#f4ecdb}
-  .hero .quick{margin-top:18px;color:#cdbc98;font-size:.9rem;line-height:1.9}
+  /* ── 상단 고정바 ── */
+  .topbar{position:sticky;top:0;z-index:50;max-width:var(--col);margin:0 auto;
+          background:rgba(44,37,87,.96);backdrop-filter:blur(6px);color:#fff}
+  .topbar .in{display:flex;align-items:center;gap:10px;height:54px;padding:0 14px}
+  .topbar .brand{display:flex;align-items:center;gap:8px;font-family:"Gowun Batang",serif;
+                 font-weight:700;font-size:1.02rem;letter-spacing:.01em}
+  .topbar .brand img{width:28px;height:28px;border-radius:50%;background:#fff}
+  .topbar .call{margin-left:auto;display:inline-flex;align-items:center;gap:6px;background:#fff;
+                color:var(--navy);font-weight:700;padding:8px 14px;border-radius:999px;font-size:.84rem}
 
-  /* services */
-  .svc{max-width:420px;margin:0 auto}
-  .svc .item{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 6px 20px rgba(60,50,30,.08);margin-top:22px}
-  .svc .item .ph{height:180px;overflow:hidden;background:#efe7d6}
-  .svc .item .ph img{width:100%;height:100%;object-fit:cover}
-  .svc .item .body{padding:22px 22px 26px}
-  .svc .item h3{font-size:1.4rem;font-weight:800}
-  .svc .item h3 small{display:block;font-weight:400;color:var(--gold-d);font-family:"Noto Sans KR";font-size:.74rem;letter-spacing:.18em;margin-top:4px}
-  .svc .item p{color:var(--muted);margin-top:10px;font-size:1rem;line-height:1.75}
+  /* ── 히어로: 배경 슬라이드쇼 ── */
+  .hero{position:relative;overflow:hidden;min-height:340px;display:flex;flex-direction:column;
+        align-items:center;justify-content:center;text-align:center;padding:64px 26px;color:#fff}
+  .hero .bg{position:absolute;inset:0;z-index:0}
+  .hero .bg i{position:absolute;inset:0;background-size:cover;background-position:center;
+              transform:translateX(100%);animation:heroSlide 15s linear infinite both}
+  .hero .bg i:nth-child(1){background-image:url(images/hero1.jpg);animation-delay:0s}
+  .hero .bg i:nth-child(2){background-image:url(images/hero2.jpg);animation-delay:5s}
+  .hero .bg i:nth-child(3){background-image:url(images/hero3.jpg);animation-delay:10s}
+  @keyframes heroSlide{
+    0%{transform:translateX(100%)}
+    6%{transform:translateX(0)}
+    33.33%{transform:translateX(0)}
+    39.33%{transform:translateX(-100%)}
+    100%{transform:translateX(-100%)}
+  }
+  .hero .veil{position:absolute;inset:0;z-index:1;
+              background:linear-gradient(180deg,rgba(24,20,52,.62),rgba(24,20,52,.42) 45%,rgba(24,20,52,.72))}
+  .hero > *:not(.bg):not(.veil){position:relative;z-index:2}
+  .hero h1{font-family:"Gowun Batang",serif;font-size:1.72rem;font-weight:700;
+           text-shadow:0 2px 14px rgba(0,0,0,.5);line-height:1.5}
+  .hero .sub{font-family:"Gowun Batang",serif;font-size:1.16rem;margin-top:20px;line-height:1.9;
+             text-shadow:0 2px 12px rgba(0,0,0,.5)}
+  @media (prefers-reduced-motion: reduce){
+    .hero .bg i{animation:none;transform:none;opacity:0}
+    .hero .bg i:nth-child(1){opacity:1}
+  }
 
-  /* about / story */
-  .about .story{max-width:440px;margin:22px auto 0;color:var(--ink2);font-size:1.06rem;line-height:1.9}
-  .about .yy{width:190px;margin:26px auto 0;border-radius:16px;box-shadow:0 8px 24px rgba(60,50,30,.16)}
-  .badges{display:flex;flex-direction:column;gap:12px;align-items:center;margin-top:26px}
-  .badge{background:#fff;border:1px solid var(--line);border-radius:999px;padding:11px 22px;font-family:"Nanum Myeongjo",serif;font-weight:700;color:var(--ink);box-shadow:0 3px 12px rgba(60,50,30,.06);font-size:1.02rem}
-  .badge .s{color:var(--gold-d)}
-  .certs{display:flex;gap:14px;justify-content:center;margin-top:24px;flex-wrap:wrap}
-  .certs figure{background:#fff;border:1px solid var(--line);border-radius:12px;padding:7px;width:128px;box-shadow:0 4px 14px rgba(60,50,30,.07)}
-  .certs img{border-radius:8px;width:100%;height:148px;object-fit:cover}
-  .certs figcaption{font-size:.76rem;color:var(--muted);margin-top:7px}
+  /* ── 상호 / 전화 / 주소 ── */
+  .card-contact{padding:38px 24px 30px;text-align:center}
+  .card-contact .name{font-family:"Gowun Batang",serif;color:var(--navy);font-size:1.62rem;font-weight:700}
+  .card-contact .tel{display:block;color:var(--navy);font-size:1.32rem;font-weight:700;margin-top:6px;letter-spacing:.01em}
+  .card-contact .tel + .tel{margin-top:2px}
+  .addr{padding:0 24px 34px;text-align:center;color:var(--navy);font-size:.96rem;font-weight:700;line-height:1.9}
 
-  /* reviews */
-  .review{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px 24px;margin-top:20px;max-width:440px;margin-left:auto;margin-right:auto;box-shadow:0 5px 18px rgba(60,50,30,.06)}
-  .review .q{font-family:"Nanum Myeongjo",serif;font-size:2.2rem;color:var(--gold);line-height:.5;margin-bottom:6px}
-  .review p{color:var(--ink2);font-size:1.03rem;line-height:1.8}
-  .review .who{display:flex;align-items:center;justify-content:center;gap:11px;margin-top:18px}
-  .review .who img{width:44px;height:44px;border-radius:50%;object-fit:cover}
-  .review .who b{font-weight:700;font-size:.96rem}
-  .review .who span{display:block;color:var(--muted);font-size:.8rem}
+  /* ── 배경 이미지 띠 ── */
+  .band{position:relative;padding:52px 26px;text-align:center;color:#fff;overflow:hidden;
+        background-size:cover;background-position:center}
+  .band:before{content:"";position:absolute;inset:0;background:rgba(30,25,64,.66)}
+  .band > *{position:relative}
+  .band.value{background-image:url(images/bg-band.jpg)}
+  .band.story{background-image:url(images/bg-story.jpg)}
+  .band.book{background-image:url(images/bg-band.jpg)}
+  .band p{font-size:1.1rem;line-height:2;text-shadow:0 2px 10px rgba(0,0,0,.4)}
+  .band h2{font-family:"Gowun Batang",serif;font-size:1.66rem;font-weight:700;line-height:1.55;
+           text-shadow:0 2px 12px rgba(0,0,0,.45)}
 
-  /* booking */
-  .book{background:linear-gradient(160deg,#241f18,#33291b);color:#f4ecdb;text-align:center;padding:56px 24px}
-  .book .eyebrow{color:#e6cf9a}
-  .book h2{color:#fff}
-  .book .big{font-family:"Nanum Myeongjo",serif;color:#f3d68a;font-size:1.9rem;font-weight:800;margin-top:8px}
-  .book p{color:#dfd2b6;margin-top:18px;max-width:420px;margin-left:auto;margin-right:auto;font-size:1.02rem}
-  .book .warn{margin:22px auto 0;max-width:440px;background:rgba(181,138,62,.14);border:1px solid rgba(181,138,62,.4);border-radius:14px;padding:16px 20px;color:#eeddb8;font-size:.98rem;line-height:1.75}
-  .book .btn{margin:24px auto 0}
+  /* ── 상담 안내 카드 ── */
+  .svc{border-top:1px solid var(--line);padding:46px 24px;text-align:center}
+  .svc:first-of-type{border-top:0}
+  .svc .ph{max-width:300px;margin:0 auto 22px}
+  .svc .ph img{width:100%;height:auto;border-radius:14px}
+  .svc .ph.plain img{border-radius:0}
+  .svc h3{font-family:"Gowun Batang",serif;color:var(--navy);font-size:1.56rem;font-weight:700;letter-spacing:.06em}
+  .svc p{margin-top:14px;color:var(--body);font-size:1.02rem;line-height:1.95}
 
-  /* pricing */
-  .price{max-width:400px;margin:24px auto 0;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 8px 24px rgba(60,50,30,.08);text-align:left}
-  .price .row{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;border-bottom:1px solid var(--line)}
+  /* ── 민원장 이야기 ── */
+  .story-body{padding:46px 24px;text-align:center}
+  .story-body p{margin-top:16px;font-size:1.02rem;line-height:1.95}
+  .story-body .alley{margin:28px auto 0;border-radius:14px;overflow:hidden;box-shadow:0 8px 26px rgba(30,25,64,.18)}
+
+  /* ── 이력 / 인증 ── */
+  .cred{padding:46px 24px 52px;text-align:center;background:var(--wash)}
+  .cred .item + .item{margin-top:40px}
+  .cred h3{font-family:"Gowun Batang",serif;color:var(--navy);font-size:1.32rem;font-weight:700}
+  .cred figure{margin:18px auto 0;background:#fff;border:1px solid var(--line);border-radius:12px;
+               padding:10px;max-width:260px;box-shadow:0 5px 18px rgba(30,25,64,.09)}
+  .cred figure img{width:100%;border-radius:6px}
+
+  /* ── 후기 ── */
+  .reviews{padding:52px 24px}
+  .rv{background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px 22px 26px;
+      text-align:center;box-shadow:0 6px 20px rgba(30,25,64,.07)}
+  .rv + .rv{margin-top:20px}
+  .rv img{width:82px;height:82px;border-radius:50%;object-fit:cover;margin:0 auto 14px;
+          border:3px solid var(--wash)}
+  .rv .who{font-family:"Gowun Batang",serif;color:var(--navy);font-size:1.14rem;font-weight:700}
+  .rv p{margin-top:12px;color:var(--body);font-size:.99rem;line-height:1.9}
+
+  /* ── 예약 안내 ── */
+  .book-body{padding:46px 24px 40px;text-align:center}
+  .book-body p{font-size:1.01rem;line-height:1.95}
+  .book-body p + p{margin-top:20px}
+  .book-body .strong{color:var(--navy);font-weight:700}
+  .book-body h3{font-family:"Gowun Batang",serif;color:var(--navy);font-size:1.34rem;
+                font-weight:700;margin-top:34px}
+  .phone-cta{padding:8px 24px 52px;text-align:center}
+  .phone-cta img{width:150px;margin:0 auto 20px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:16px 30px;
+       border-radius:999px;font-weight:700;font-size:1.06rem;width:100%;max-width:330px;
+       background:var(--navy);color:#fff;transition:background .15s}
+  .btn:hover{background:var(--navy-d)}
+  .btn.ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.6)}
+  .btn.ghost:hover{background:rgba(255,255,255,.14)}
+  .btn.outline{background:transparent;color:var(--navy);border:1.5px solid var(--navy)}
+  .btn.outline:hover{background:var(--navy);color:#fff}
+
+  /* ── 요금 ── */
+  .price{max-width:400px;margin:26px auto 0;border:1px solid var(--line);border-radius:16px;
+         overflow:hidden;box-shadow:0 8px 24px rgba(30,25,64,.08)}
+  .price .row{display:flex;align-items:center;justify-content:space-between;padding:17px 22px;
+              border-bottom:1px solid var(--line)}
   .price .row:last-child{border-bottom:0}
-  .price .row:nth-child(odd){background:#fbf8f1}
-  .price .name{font-family:"Nanum Myeongjo",serif;font-size:1.16rem;font-weight:700}
-  .price .name small{font-family:"Noto Sans KR";font-weight:400;color:var(--muted);font-size:.82rem;margin-left:6px}
-  .price .amt{font-weight:800;font-size:1.14rem;color:var(--gold-d)}
-  .price-note{color:var(--muted);font-size:.9rem;margin-top:16px}
+  .price .row:nth-child(odd){background:var(--wash)}
+  .price .n{font-family:"Gowun Batang",serif;color:var(--navy);font-size:1.14rem;font-weight:700}
+  .price .n small{font-family:"Gowun Dodum";font-weight:400;color:var(--muted);font-size:.82rem;margin-left:5px}
+  .price .a{font-weight:700;font-size:1.12rem;color:var(--navy)}
+  .price-note{color:var(--muted);font-size:.9rem;margin-top:16px;line-height:1.8}
 
-  /* location */
-  .loc img{border-radius:16px;box-shadow:0 8px 24px rgba(60,50,30,.14);margin:22px auto 0;width:100%;max-width:440px;height:220px;object-fit:cover}
-  .loc .addr{margin-top:22px;font-size:1.08rem;color:var(--ink2);line-height:1.8}
-  .loc .addr b{color:var(--ink)}
-  .map-btns{display:flex;gap:12px;justify-content:center;margin-top:22px;flex-wrap:wrap}
-  .map-btn{display:inline-flex;align-items:center;gap:7px;border:1.5px solid var(--gold);color:var(--gold-d);border-radius:999px;padding:11px 20px;font-weight:700;font-size:.95rem}
-  .map-btn:hover{background:var(--gold);color:#241d0f}
+  /* ── 오시는 길 ── */
+  .map-wrap{margin:26px auto 0;border-radius:14px;overflow:hidden;border:1px solid var(--line);
+            box-shadow:0 8px 24px rgba(30,25,64,.1)}
+  .root_daum_roughmap{width:100%!important}
+  .root_daum_roughmap .wrap_map{height:340px!important}
+  .map-btns{display:flex;gap:10px;justify-content:center;margin-top:20px;flex-wrap:wrap}
+  .map-btn{display:inline-flex;align-items:center;gap:6px;border:1.5px solid var(--navy);
+           color:var(--navy);border-radius:999px;padding:10px 18px;font-weight:700;font-size:.92rem}
+  .map-btn:hover{background:var(--navy);color:#fff}
+  .signboard{margin:30px auto 0;border-radius:14px;overflow:hidden;max-width:420px;
+             box-shadow:0 8px 26px rgba(30,25,64,.18)}
+  .signboard figcaption{background:var(--navy);color:#fff;font-size:.88rem;padding:10px 12px;text-align:center}
 
-  /* footer */
-  footer{background:var(--ink);color:#cdbfa4;padding:46px 24px 40px;text-align:center;font-size:.92rem}
-  footer .fbrand{font-family:"Nanum Myeongjo",serif;color:#f4ecdb;font-size:1.3rem;font-weight:700;letter-spacing:.04em}
-  footer .fline{margin-top:12px;line-height:2}
-  footer a.tel{color:#e6cf9a;font-weight:700}
-  footer .small{margin-top:18px;color:#8c8069;font-size:.8rem;line-height:1.9}
+  /* ── 푸터 ── */
+  footer{background:var(--navy);color:#c9c5dd;padding:44px 24px 96px;text-align:center;font-size:.92rem}
+  footer .fb{font-family:"Gowun Batang",serif;color:#fff;font-size:1.3rem;font-weight:700}
+  footer .fl{margin-top:12px;line-height:2}
+  footer a.tel{color:#fff;font-weight:700}
+  footer .small{margin-top:18px;color:#928dae;font-size:.8rem;line-height:1.95}
 
-  /* floating call */
-  .fab{position:fixed;left:50%;transform:translateX(-50%);bottom:16px;z-index:60;display:inline-flex;align-items:center;gap:9px;background:var(--gold);color:#241d0f;font-weight:800;padding:14px 26px;border-radius:999px;box-shadow:0 8px 22px rgba(0,0,0,.3);font-size:1.02rem}
+  /* ── 하단 고정 전화 버튼 ── */
+  .fab{position:fixed;left:50%;transform:translateX(-50%);bottom:16px;z-index:60;
+       display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:#fff;
+       font-weight:700;padding:14px 26px;border-radius:999px;
+       box-shadow:0 10px 26px rgba(30,25,64,.45);font-size:1.02rem}
 </style>
 </head>
 <body>
 <div class="page">
 
-  <!-- TOP BAR -->
+  <!-- 상단 고정바 -->
   <div class="topbar">
     <div class="in">
-      <div class="brand"><span class="yy"></span>민원장 철학원</div>
-      <a class="call-top" href="tel:010-5750-3883">📞 예약 010-5750-3883</a>
+      <div class="brand"><img src="images/logo.jpg" alt="" width="500" height="500">민원장 철학원</div>
+      <a class="call" href="tel:010-5750-3883">📞 예약 010-5750-3883</a>
     </div>
   </div>
 
-  <!-- HERO -->
+  <!-- 1. 히어로 (배경 슬라이드쇼) -->
   <header class="hero">
-    <img class="logo" src="images/logo.jpg" alt="민원장 철학원 로고" width="500" height="500" fetchpriority="high" decoding="async">
-    <h1>민원장 철학원</h1>
-    <div class="sub">운명의 문을 열어드립니다</div>
-    <div class="tradition">종로 적선동 40년의 전통,<br>이제 야탑역에서 만나보세요.</div>
-    <div class="value">답답한 속을 뻥 뚫어주는 상담!<br>예약제로 운영되며, 심리상담도 병행합니다.</div>
-    <div class="cta-row">
-      <a class="btn btn-gold" href="tel:010-5750-3883">📞 전화 예약하기</a>
-      <a class="btn btn-ghost" href="#location">오시는 길 보기</a>
-    </div>
-    <div class="quick">☎ 0508-9596-3790 · 📱 010-5750-3883<br>분당선 야탑역 2번 출구 도보 3분</div>
+    <div class="bg" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="veil" aria-hidden="true"></div>
+    <h1>운명의 문을 열어드립니다</h1>
+    <p class="sub">종로 적선동 40년의 전통,<br>이제 야탑역에서 만나보세요.</p>
   </header>
 
-  <!-- SERVICES -->
-  <section class="sec" id="services">
-    <span class="eyebrow">상 담 안 내</span>
-    <h2>이런 고민, <span class="u">함께 풀어드립니다</span></h2>
-    <div class="divider"></div>
+  <!-- 2. 상호 · 전화 -->
+  <section class="card-contact">
+    <div class="name">민원장 철학원</div>
+    <a class="tel" href="tel:0508-9596-3790">0508-9596-3790</a>
+  </section>
+
+  <!-- 3. 주소 -->
+  <div class="addr">
+    경기도 성남시 분당구 야탑로111번길 16 (야탑동) 3층<br>
+    분당선 야탑역 2번출구 도보 3분거리
+  </div>
+
+  <!-- 4. 핵심 문구 -->
+  <section class="band value">
+    <p>답답한 속을 뻥 뚫어주는 상담!<br>예약제로 운영되며,<br>심리상담도 병행합니다</p>
+  </section>
+
+  <!-- 5~8. 상담 안내 -->
+  <section id="services">
     <div class="svc">
-      <div class="item">
-        <div class="ph"><img src="images/eumyang.gif" alt="음양오행 동양철학" width="360" height="354" loading="lazy" decoding="async"></div>
-        <div class="body"><h3>동양철학<small>東洋哲學</small></h3>
-          <p>음양오행의 동양철학을 바탕으로 운명의 비밀을 풀어드립니다.</p></div>
+      <div class="ph plain"><img src="images/eumyang.gif" alt="음양오행 상생상극 순환도" width="500" height="493" loading="lazy" decoding="async"></div>
+      <h3>동양철학</h3>
+      <p>음양오행의 동양철학을 바탕으로 운명의 비밀을 풀어드립니다.</p>
+    </div>
+    <div class="svc">
+      <div class="ph"><img src="images/saju.png" alt="사주 상담" width="700" height="700" loading="lazy" decoding="async"></div>
+      <h3>사 주</h3>
+      <p>사주풀이로 운세, 진급, 애정,<br>개명 등에 대해 알려드립니다.</p>
+    </div>
+    <div class="svc">
+      <div class="ph"><img src="images/gunghap.png" alt="궁합 상담" width="700" height="700" loading="lazy" decoding="async"></div>
+      <h3>궁 합</h3>
+      <p>제2의 인생을 결정하는 궁합,<br>반드시 전문가의 분석이 필요합니다.</p>
+    </div>
+    <div class="svc">
+      <div class="ph"><img src="images/taro.jpg" alt="타로 카드 상담" width="800" height="533" loading="lazy" decoding="async"></div>
+      <h3>타 로</h3>
+      <p>국내 최초로 오랜 연구를 통해<br>사주와 타로를 연결하여<br>속시원히 운세를<br>풀어 드립니다.</p>
+    </div>
+  </section>
+
+  <!-- 9. 민원장 이야기 (제목 띠) -->
+  <section class="band story" id="about">
+    <h2>민원장만의 속시원한<br>인생 상담</h2>
+  </section>
+
+  <!-- 10. 적선동 이야기 -->
+  <div class="story-body">
+    <h3 class="t">종로구 적선동 3대 철학관</h3>
+    <div class="rule"></div>
+    <p>지금은 재개발되어 사라진 서울한복판의 종로구 적선동 100번지</p>
+    <p>김봉수, 백운암과 함께 3대 철학관으로 이름을 떨친 민원장</p>
+    <p>이제 분당 야탑역에서 속시원한 인생상담을 받아보세요.</p>
+    <figure class="alley">
+      <img src="images/alley.jpg" alt="종로구 적선동 옛 골목" width="700" height="410" loading="lazy" decoding="async">
+    </figure>
+  </div>
+
+  <!-- 11. 이력 / 인증 -->
+  <section class="cred">
+    <div class="item">
+      <h3>1987년 시작된 살아있는 전설</h3>
+      <figure><img src="images/cert1.jpg" alt="민원장 인증서" width="300" height="233" loading="lazy" decoding="async"></figure>
+    </div>
+    <div class="item">
+      <h3>대한역술인협회 부회장</h3>
+      <figure><img src="images/cert2.jpg" alt="대한역술인협회 부회장 위촉장" width="211" height="300" loading="lazy" decoding="async"></figure>
+    </div>
+  </section>
+
+  <!-- 12. 고객 후기 -->
+  <section class="reviews" id="reviews">
+    <h2 class="t">고객 후기</h2>
+    <div class="rule"></div>
+    <div style="margin-top:28px">
+      <div class="rv">
+        <img src="images/review-a.jpg" alt="" width="200" height="200" loading="lazy" decoding="async">
+        <div class="who">수지구 개복치1009</div>
+        <p>“하는 일이 너무 답답해서 혹시나 하는 마음으로 방문했는데 너무 시원했습니다. 답을 알려준다기보다 내 마음의 문제를 풀고 온 느낌입니다. 심리상담 백번 받는거보다 나은거 같아요~ 주저리주저리 들어주셔서 감사합니다..”</p>
       </div>
-      <div class="item">
-        <div class="ph"><img src="images/service-saju.jpg" alt="사주 만세력 도표" width="700" height="700" loading="lazy" decoding="async"></div>
-        <div class="body"><h3>사주<small>四柱</small></h3>
-          <p>사주풀이로 운세, 진급, 애정, 개명 등에 대해 알려드립니다.</p></div>
+      <div class="rv">
+        <img src="images/review-b.jpg" alt="" width="200" height="200" loading="lazy" decoding="async">
+        <div class="who">방배동 짱돌21</div>
+        <p>“원장님의 인생경험과 인간관계까지 더해서 인생상담을 자분자분 말씀해 주셔서 속이 좀 풀리고 사업설계에 많은 도움이 되었습니다. 올 한해 좋은 일 있으면 민원장님 덕입니다.”</p>
       </div>
-      <div class="item">
-        <div class="ph"><img src="images/service-gunghap.jpg" alt="궁합 상담" width="700" height="700" loading="lazy" decoding="async"></div>
-        <div class="body"><h3>궁합<small>宮合</small></h3>
-          <p>제2의 인생을 결정하는 궁합, 반드시 전문가의 분석이 필요합니다.</p></div>
-      </div>
-      <div class="item">
-        <div class="ph"><img src="images/service-taro.jpg" alt="타로 카드 상담" width="700" height="699" loading="lazy" decoding="async"></div>
-        <div class="body"><h3>타로<small>TAROT</small></h3>
-          <p>국내 최초로 오랜 연구를 통해 사주와 타로를 연결하여 속시원히 운세를 풀어 드립니다.</p></div>
+      <div class="rv">
+        <img src="images/review-c.jpg" alt="" width="200" height="200" loading="lazy" decoding="async">
+        <div class="who">성남 Pearl</div>
+        <p>“다녀왔는데 너무 정확하게 말씀해주셔서 속시원합니다 또 방문하겠습니다 감사합니다.”</p>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT / STORY -->
-  <section class="sec alt" id="about">
-    <span class="eyebrow">민 원 장 이 야 기</span>
-    <h2>민원장만의 <span class="u">속시원한 인생 상담</span></h2>
-    <div class="divider"></div>
-    <div class="about">
-      <p class="story">지금은 재개발되어 사라진 서울 한복판 종로구 적선동 100번지. 그곳에서 김봉수·백운암과 함께 ‘적선동 3대 철학관’으로 이름을 떨친 민원장이, 이제 분당 야탑역에서 변함없는 마음으로 속시원한 인생 상담을 이어갑니다.</p>
-      <img class="yy" src="images/eumyang.gif" alt="음양오행 상생상극 순환도" width="360" height="354" loading="lazy" decoding="async">
-      <div class="badges">
-        <div class="badge"><span class="s">1987년</span> 시작된 살아있는 전설</div>
-        <div class="badge">대한역술인협회 <span class="s">부회장</span></div>
-      </div>
-      <div class="certs">
-        <figure><img src="images/cert1.jpg" alt="민원장 협회 인증서" width="300" height="233" loading="lazy" decoding="async"><figcaption>협회 인증</figcaption></figure>
-        <figure><img src="images/cert2.jpg" alt="대한역술인협회 부회장 위촉장" width="211" height="300" loading="lazy" decoding="async"><figcaption>부회장 위촉</figcaption></figure>
-      </div>
-    </div>
+  <!-- 13. 전화예약 먼저!! -->
+  <section class="band book" id="booking">
+    <h2>전화예약 먼저!!</h2>
   </section>
 
-  <!-- REVIEWS -->
-  <section class="sec" id="reviews">
-    <span class="eyebrow">고 객 후 기</span>
-    <h2>다녀가신 분들의 <span class="u">이야기</span></h2>
-    <div class="divider"></div>
-    <div class="review">
-      <div class="q">“</div>
-      <p>하는 일이 너무 답답해서 혹시나 하는 마음으로 방문했는데 너무 시원했습니다. 답을 알려준다기보다 내 마음의 문제를 풀고 온 느낌입니다.</p>
-      <div class="who"><img src="images/review3.jpg" alt="" width="200" height="200" loading="lazy" decoding="async"><span><b>개복치1009</b><span>수지구</span></span></div>
-    </div>
-    <div class="review">
-      <div class="q">“</div>
-      <p>원장님의 인생 경험과 인간관계까지 더해서 인생 상담을 자분자분 말씀해 주셨습니다.</p>
-      <div class="who"><img src="images/review1.jpg" alt="" width="200" height="200" loading="lazy" decoding="async"><span><b>짱돌21</b><span>방배동</span></span></div>
-    </div>
-    <div class="review">
-      <div class="q">“</div>
-      <p>다녀왔는데 너무 정확하게 말씀해주셔서 속시원합니다.</p>
-      <div class="who"><img src="images/review2.jpg" alt="" width="200" height="200" loading="lazy" decoding="async"><span><b>Pearl</b><span>성남</span></span></div>
-    </div>
-  </section>
+  <!-- 14. 예약 안내 -->
+  <div class="book-body">
+    <p>전화예약 없이 방문하실 경우 오래동안 기다리거나, 상담이 길어질 경우 다음 상담자와 시간이 겹칠수 있습니다.</p>
+    <p class="strong">방문시에는 반드시 전화예약을 먼저 해 주세요.</p>
+    <h3>전화상담도 예약 먼저</h3>
+    <p>바쁘신 경우 전화상담도 가능합니다.<br>이 경우도 전화로 시간예약 먼저 해주세요.</p>
+  </div>
 
-  <!-- BOOKING -->
-  <section class="book" id="booking">
-    <span class="eyebrow">예 약 안 내</span>
-    <div class="big">전화예약 먼저!!</div>
-    <p>정성껏 한 분 한 분 상담해 드리기 위해 예약제로 운영합니다.</p>
-    <div class="warn">전화예약 없이 방문하실 경우, 앞선 상담이 길어지면 오래 기다리시거나 다음 예약자와 시간이 겹칠 수 있습니다. 바쁘신 경우 전화상담도 가능하며, 전화로 미리 시간 예약이 필요합니다.</div>
-    <a class="btn btn-gold" href="tel:010-5750-3883">📞 010-5750-3883 예약하기</a>
-  </section>
+  <!-- 15. 전화 CTA -->
+  <div class="phone-cta">
+    <img src="images/phone.png" alt="" width="360" height="360" loading="lazy" decoding="async">
+    <a class="btn" href="tel:010-5750-3883">📞 010-5750-3883 전화 예약</a>
+  </div>
 
-  <!-- PRICING -->
-  <section class="sec" id="price">
-    <span class="eyebrow">상 담 료</span>
-    <h2>상담 <span class="u">안내 요금</span></h2>
-    <div class="divider"></div>
+  <!-- 16~17. 상담 요금 -->
+  <section class="sec wash" id="price">
+    <h2 class="t">상담 요금</h2>
+    <div class="rule"></div>
     <div class="price">
-      <div class="row"><span class="name">사주</span><span class="amt">5만원</span></div>
-      <div class="row"><span class="name">궁합 <small>2인</small></span><span class="amt">10만원</span></div>
-      <div class="row"><span class="name">택일</span><span class="amt">10만원</span></div>
-      <div class="row"><span class="name">개명 &amp; 작명</span><span class="amt">20만원</span></div>
-      <div class="row"><span class="name">타로</span><span class="amt">3만원</span></div>
+      <div class="row"><span class="n">사주</span><span class="a">5만원</span></div>
+      <div class="row"><span class="n">궁합 <small>2인</small></span><span class="a">10만원</span></div>
+      <div class="row"><span class="n">택일</span><span class="a">10만원</span></div>
+      <div class="row"><span class="n">개명 &amp; 작명</span><span class="a">20만원</span></div>
+      <div class="row"><span class="n">타로</span><span class="a">3만원</span></div>
     </div>
-    <p class="price-note">※ 상담 내용에 따라 달라질 수 있어, 자세한 사항은 전화로 문의해 주세요.</p>
+    <p class="price-note">※ 상담 내용에 따라 달라질 수 있어,<br>자세한 사항은 전화로 문의해 주세요.</p>
   </section>
 
-  <!-- LOCATION -->
-  <section class="sec alt loc" id="location">
-    <span class="eyebrow">오 시 는 길</span>
-    <h2>분당 야탑, <span class="u">언제든 찾아오세요</span></h2>
-    <div class="divider"></div>
-    <img src="images/road.jpg" alt="민원장 철학원 약도 — 야탑역 2번 출구 도보 3분" width="630" height="369" loading="lazy" decoding="async">
-    <div class="addr">
-      <b>경기도 성남시 분당구 야탑로111번길 16</b><br>(야탑동) 3층<br>
-      분당선 <b>야탑역 2번 출구</b> 도보 3분
+  <!-- 18. 상호 · 전화 (재안내) -->
+  <section class="card-contact">
+    <div class="name">민원장 철학원</div>
+    <a class="tel" href="tel:0508-9596-3790">0508-9596-3790</a>
+    <a class="tel" href="tel:010-5750-3883">010-5750-3883</a>
+  </section>
+
+  <!-- 19. 주소 -->
+  <div class="addr">
+    경기도 성남시 분당구 야탑로111번길 16 (야탑동) 3층<br>
+    분당선 야탑역 2번출구 도보 3분거리
+  </div>
+
+  <!-- 20. 오시는 길 (카카오맵) -->
+  <section class="sec" id="location" style="padding-top:0">
+    <div class="map-wrap">
+      <div id="daumRoughmapContainer1766645624862" class="root_daum_roughmap root_daum_roughmap_landing"></div>
     </div>
     <div class="map-btns">
-      <a class="map-btn" href="https://map.naver.com/p/search/경기도 성남시 분당구 야탑로111번길 16" target="_blank" rel="noopener">🗺 네이버 지도</a>
-      <a class="map-btn" href="https://map.kakao.com/?q=경기도 성남시 분당구 야탑로111번길 16" target="_blank" rel="noopener">🗺 카카오맵</a>
+      <a class="map-btn" href="https://map.kakao.com/?from=roughmap&amp;eName=%EA%B2%BD%EA%B8%B0%20%EC%84%B1%EB%82%A8%EC%8B%9C%20%EB%B6%84%EB%8B%B9%EA%B5%AC%20%EC%95%BC%ED%83%91%EB%A1%9C111%EB%B2%88%EA%B8%B8%2016&amp;eX=529074.0000000006&amp;eY=1086606.000000001" target="_blank" rel="noopener">카카오맵 길찾기</a>
+      <a class="map-btn" href="https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EC%84%B1%EB%82%A8%EC%8B%9C%20%EB%B6%84%EB%8B%B9%EA%B5%AC%20%EC%95%BC%ED%83%91%EB%A1%9C111%EB%B2%88%EA%B8%B8%2016" target="_blank" rel="noopener">네이버 지도</a>
     </div>
+
+    <!-- 21. 간판 -->
+    <figure class="signboard">
+      <img src="images/signboard.jpg" alt="민원장철학 사주·타로 간판" width="700" height="933" loading="lazy" decoding="async">
+      <figcaption>건물 3층 · 노란 간판을 찾으세요</figcaption>
+    </figure>
   </section>
 
-  <!-- FOOTER -->
+  <!-- 푸터 -->
   <footer>
-    <div class="fbrand">민원장 철학원</div>
-    <div class="fline">
+    <div class="fb">민원장 철학원</div>
+    <div class="fl">
       경기도 성남시 분당구 야탑로111번길 16 (야탑동) 3층<br>
       <a class="tel" href="tel:010-5750-3883">010-5750-3883</a> · <a class="tel" href="tel:0508-9596-3790">0508-9596-3790</a>
     </div>
@@ -331,5 +434,19 @@
 
 </div>
 <a class="fab" href="tel:010-5750-3883">📞 전화 예약</a>
+
+<script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+<script>
+  window.addEventListener('load', function () {
+    if (window.daum && daum.roughmap) {
+      new daum.roughmap.Lander({
+        timestamp: "1766645624862",
+        key: "eur8jiu98pk",
+        mapWidth: "100%",
+        mapHeight: "340"
+      }).render();
+    }
+  });
+</script>
 </body>
 </html>
