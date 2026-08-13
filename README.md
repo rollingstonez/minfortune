@@ -1,7 +1,11 @@
 # minfortune.kr — ChemiCloud → Vercel 이관
 
 기존 WordPress + Elementor 사이트(ChemiCloud 호스팅)를 **정적 사이트**로 다시 만들어
-Vercel에 올리기 위한 저장소입니다.
+Vercel에 올린 저장소입니다.
+
+- 배포본: <https://minfortune.vercel.app> (Vercel 프로젝트 `minfortune`, Root Directory `site`)
+- `main`에 push하면 자동 재배포됩니다.
+- 도메인 minfortune.kr 연결은 아직 전 — 아래 "도메인 전환" 참고.
 
 ## 구조
 
