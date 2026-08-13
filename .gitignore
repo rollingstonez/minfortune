@@ -1,0 +1,14 @@
+# 원본 WordPress 사이트에서 긁어온 원자재(css, jquery, elementor, 원본 이미지 등)와
+# 중간 산출물 zip 은 저장소에 넣지 않습니다. 배포에 필요한 건 site/ 뿐입니다.
+/*
+!/.gitignore
+!/README.md
+!/CONTENT.md
+!/site/
+!/.claude/
+/.claude/*
+!/.claude/launch.json
+
+.DS_Store
+.vercel/
+node_modules/
