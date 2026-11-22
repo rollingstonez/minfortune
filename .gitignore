@@ -5,6 +5,7 @@
 !/README.md
 !/CONTENT.md
 !/site/
+!/claude/
 !/.claude/
 /.claude/*
 !/.claude/launch.json

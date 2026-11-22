@@ -1,0 +1,129 @@
+/* 민원장 철학원 — 사주·타로 결합 해설 섹션
+   본사이트(site/index.html)의 색·폰트·레이아웃 토큰을 그대로 따릅니다. */
+:root{
+  --navy:#2c2557; --navy-d:#1e1940; --body:#303030; --muted:#6b6880;
+  --line:#e6e4ee; --wash:#f5f4f9; --col:680px;
+  --support:#2f7a56; --drain:#8a6d1f; --pressure:#9c3c3c; --command:#2c4f8a; --same:#6b3c8a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:"Gowun Dodum","Noto Sans KR",sans-serif;color:var(--body);background:#dcdae6;
+     line-height:1.85;-webkit-font-smoothing:antialiased;word-break:keep-all}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+.batang{font-family:"Gowun Batang","Noto Sans KR",serif}
+.page{max-width:var(--col);margin:0 auto;background:#fff;min-height:100vh;
+      box-shadow:0 0 40px rgba(30,25,64,.18);overflow-x:clip;padding-bottom:88px}
+
+/* 상단 고정바 */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(44,37,87,.97);backdrop-filter:blur(6px);color:#fff}
+.topbar .in{display:flex;align-items:center;gap:10px;height:54px;padding:0 14px}
+.topbar .brand{font-family:"Gowun Batang",serif;font-weight:700;font-size:1rem}
+.topbar .brand small{display:block;font-family:"Gowun Dodum";font-weight:400;font-size:.66rem;
+                     color:#c9c5dd;letter-spacing:.02em;line-height:1.3}
+.topbar .call{margin-left:auto;background:#fff;color:var(--navy);font-weight:700;
+              padding:8px 14px;border-radius:999px;font-size:.82rem;white-space:nowrap}
+
+/* 빵가루 */
+.bc{padding:14px 22px 0;font-size:.8rem;color:var(--muted)}
+.bc a{color:var(--navy)}
+.bc span{opacity:.5;margin:0 5px}
+
+/* 공통 */
+main{padding:0 22px}
+.hd{padding:26px 0 8px}
+.eyebrow{color:var(--muted);font-size:.84rem;letter-spacing:.04em}
+h1{font-family:"Gowun Batang",serif;color:var(--navy);font-size:1.62rem;font-weight:700;
+   line-height:1.5;letter-spacing:-.01em;margin-top:6px}
+h2{font-family:"Gowun Batang",serif;color:var(--navy);font-size:1.22rem;font-weight:700;
+   line-height:1.5;margin:34px 0 12px;padding-top:18px;border-top:1px solid var(--line)}
+h2:first-of-type{border-top:0;padding-top:0}
+h3{font-family:"Gowun Batang",serif;color:var(--navy);font-size:1.04rem;font-weight:700;margin:20px 0 6px}
+p{font-size:1rem;line-height:1.95}
+p + p{margin-top:14px}
+.lead{margin-top:14px;font-size:1.02rem;color:var(--body)}
+.muted{color:var(--muted);font-size:.9rem;line-height:1.8}
+
+/* 관계 배지 */
+.rel{display:inline-block;margin-top:14px;padding:7px 15px;border-radius:999px;font-size:.84rem;
+     font-weight:700;color:#fff;background:var(--navy)}
+.rel.support{background:var(--support)} .rel.drain{background:var(--drain)}
+.rel.pressure{background:var(--pressure)} .rel.command{background:var(--command)}
+.rel.same{background:var(--same)}
+
+/* 요약 상자 */
+.sum{margin-top:18px;background:var(--wash);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.sum p{font-size:.98rem}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.chip{background:#fff;border:1px solid var(--line);color:var(--navy);border-radius:999px;
+      padding:5px 12px;font-size:.8rem;font-weight:700}
+
+/* 표 */
+.tbl{margin-top:14px;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.tbl .r{display:flex;justify-content:space-between;gap:14px;padding:13px 18px;border-bottom:1px solid var(--line);font-size:.95rem}
+.tbl .r:last-child{border-bottom:0}
+.tbl .r:nth-child(odd){background:var(--wash)}
+.tbl .k{color:var(--muted);flex:0 0 auto}
+.tbl .v{color:var(--navy);font-weight:700;text-align:right}
+
+/* 링크 격자 */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:9px;margin-top:14px}
+.grid a{display:block;border:1px solid var(--line);border-radius:12px;padding:12px 13px;background:#fff;
+        transition:border-color .15s,box-shadow .15s}
+.grid a:hover{border-color:var(--navy);box-shadow:0 4px 14px rgba(30,25,64,.1)}
+.grid .t{display:block;font-family:"Gowun Batang",serif;color:var(--navy);font-weight:700;font-size:1rem;line-height:1.4}
+.grid .d{display:block;color:var(--muted);font-size:.78rem;margin-top:3px;line-height:1.5}
+
+/* 이전/다음 */
+.pager{display:flex;gap:9px;margin-top:16px}
+.pager a{flex:1;border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:.86rem}
+.pager a .l{color:var(--muted);font-size:.74rem;display:block}
+.pager a .t{display:block;color:var(--navy);font-family:"Gowun Batang",serif;font-weight:700;line-height:1.45}
+.pager a:last-child{text-align:right}
+
+/* 생년월일 라우터 */
+.finder{margin-top:18px;background:var(--navy);color:#fff;border-radius:16px;padding:22px 20px}
+.finder h2{color:#fff;border:0;padding:0;margin:0 0 4px;font-size:1.18rem}
+.finder p{font-size:.88rem;color:#c9c5dd;line-height:1.7}
+.finder .row{display:flex;gap:8px;margin-top:14px}
+.finder input{flex:1;min-width:0;border:0;border-radius:10px;padding:13px 14px;font-size:1rem;
+              font-family:inherit;color:var(--body)}
+.finder button{border:0;border-radius:10px;padding:13px 20px;background:#fff;color:var(--navy);
+               font-family:inherit;font-weight:700;font-size:.96rem;cursor:pointer;white-space:nowrap}
+.finder .out{margin-top:12px;font-size:.92rem;color:#fff;min-height:1.4em}
+.finder .out a{text-decoration:underline;font-weight:700}
+
+/* CTA */
+.cta{margin:30px 0 0;background:var(--wash);border:1px solid var(--line);border-radius:16px;
+     padding:24px 20px;text-align:center}
+.cta h2{border:0;padding:0;margin:0 0 8px;font-size:1.2rem}
+.cta p{font-size:.94rem;color:var(--body)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;margin-top:16px;
+     padding:15px 28px;border-radius:999px;font-weight:700;font-size:1.02rem;width:100%;max-width:320px;
+     background:var(--navy);color:#fff;transition:background .15s}
+.btn:hover{background:var(--navy-d)}
+.btn.outline{background:transparent;color:var(--navy);border:1.5px solid var(--navy);margin-top:9px}
+.btn.outline:hover{background:var(--navy);color:#fff}
+
+/* 면책 */
+.disc{margin-top:28px;border-top:1px solid var(--line);padding-top:18px;color:var(--muted);font-size:.82rem;line-height:1.8}
+
+footer{background:var(--navy);color:#c9c5dd;margin-top:34px;padding:34px 22px;text-align:center;font-size:.9rem}
+footer .fb{font-family:"Gowun Batang",serif;color:#fff;font-size:1.22rem;font-weight:700}
+footer .fl{margin-top:10px;line-height:1.95}
+footer a.tel{color:#fff;font-weight:700}
+footer .nav{margin-top:14px;font-size:.84rem;line-height:2}
+footer .nav a{color:#c9c5dd;text-decoration:underline}
+footer .small{margin-top:16px;color:#928dae;font-size:.78rem;line-height:1.9}
+
+/* 하단 고정 전화 */
+.fab{position:fixed;left:50%;transform:translateX(-50%);bottom:16px;z-index:60;
+     display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:#fff;font-weight:700;
+     padding:13px 24px;border-radius:999px;box-shadow:0 10px 26px rgba(30,25,64,.45);font-size:1rem;
+     white-space:nowrap;max-width:calc(100% - 28px)}
+@media (max-width:420px){
+  h1{font-size:1.44rem}
+  .grid{grid-template-columns:repeat(auto-fill,minmax(120px,1fr))}
+  .fab{font-size:.9rem;padding:12px 18px}
+  .topbar .call{font-size:.76rem;padding:7px 11px}
+}

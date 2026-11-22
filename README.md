@@ -18,7 +18,11 @@ site/                  ← Vercel 배포 루트 (이 폴더만 올라갑니다)
   favicon.ico, apple-touch-icon.png, icon-192.png, icon-512.png
   images/              웹 최적화 이미지 (og.jpg 포함)
 CONTENT.md             원본 사이트에서 추출한 문구·요금·연락처 명세
+claude/                사주 × 타로 결합 해설 섹션의 **소스** (빌드하면 site/claude/ 생성)
 ```
+
+`site/claude/` 는 `node claude/build.mjs` 가 만드는 생성물입니다. 직접 고치지 말고
+`claude/` 아래 데이터·템플릿을 고친 뒤 다시 빌드하세요. 자세한 내용은 `claude/README.md`.
 
 원본 사이트에 동적 기능(예약폼·게시판·로그인)은 없고 소개형 한 페이지라,
 정적 사이트로 100% 대체됩니다. WordPress/PHP/MySQL 모두 필요 없습니다.

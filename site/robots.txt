@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://minfortune.kr/sitemap.xml
+Sitemap: https://minfortune.kr/claude/sitemap.xml
