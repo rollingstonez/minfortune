@@ -91,6 +91,7 @@ export function cta(base) {
       여덟 글자가 모두 맞물려 돌아가고, 타로는 지금 이 순간의 질문에 따라 다른 카드가 나옵니다.
       내 여덟 글자와 오늘의 카드로 보는 상담은 전화로 예약해 주세요.</p>
       <a class="btn" href="tel:${INFO.tel}">📞 ${INFO.tel} 전화예약</a>
+      <a class="btn outline" href="${base}/reading">내 사주로 직접 해보기 →</a>
       <a class="btn outline" href="${base}/about">민원장은 어떤 사람인가 →</a>
       <div class="tbl" style="margin-top:20px;text-align:left">
         ${INFO.prices.map(([k, v]) => `<div class="r"><span class="k">${k}</span><span class="v">${v}</span></div>`).join('\n        ')}

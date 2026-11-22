@@ -81,6 +81,21 @@ p + p{margin-top:14px}
 .pager a .t{display:block;color:var(--navy);font-family:"Gowun Batang",serif;font-weight:700;line-height:1.45}
 .pager a:last-child{text-align:right}
 
+/* 체험 유도 */
+.hero-cta{margin-top:22px;border-radius:20px;overflow:hidden;
+  background:linear-gradient(145deg,#2c2557,#161230 70%);box-shadow:0 14px 34px rgba(30,25,64,.3)}
+.hero-cta .hc-in{padding:28px 22px 26px;text-align:center;color:#efe9ff;
+  background:radial-gradient(520px 260px at 50% -10%, rgba(201,168,76,.26), transparent 70%)}
+.hero-cta .hc-eyebrow{color:#e3c97e;font-size:.74rem;letter-spacing:.18em}
+.hero-cta h2{color:#fff;border:0;padding:0;margin:8px 0 10px;font-size:1.5rem}
+.hero-cta p{font-size:.98rem;color:#d8d2ee;line-height:1.9}
+.hero-cta strong{color:#f0dba2}
+.hero-cta .btn{margin-top:18px;background:linear-gradient(135deg,#e3c97e,#c9a84c);color:#241d12;
+  box-shadow:0 10px 26px rgba(201,168,76,.28)}
+.hero-cta .btn:hover{background:linear-gradient(135deg,#f0dba2,#d5b55a)}
+.hero-cta .btn.outline{background:transparent;color:#e3c97e;border:1.5px solid rgba(227,201,126,.55);box-shadow:none}
+.hero-cta .btn.outline:hover{background:rgba(227,201,126,.14);color:#fff}
+
 /* 생년월일 라우터 */
 .finder{margin-top:18px;background:var(--navy);color:#fff;border-radius:16px;padding:22px 20px}
 .finder h2{color:#fff;border:0;padding:0;margin:0 0 4px;font-size:1.18rem}

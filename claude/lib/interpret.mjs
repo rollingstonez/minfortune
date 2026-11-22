@@ -3,6 +3,8 @@
 // 같은 카드라도 띠가 다르면 관계가 달라지고, 같은 관계라도 띠·카드의 고유 어휘가 들어가
 // 문장이 겹치지 않는다.
 
+import { fill, josa } from './ko.mjs';
+
 const GEN = { 木: '火', 火: '土', 土: '金', 金: '水', 水: '木' };   // 상생
 const KEOK = { 木: '土', 土: '水', 水: '火', 火: '金', 金: '木' };  // 상극
 
@@ -100,10 +102,6 @@ const DOMAIN_BRIDGE = {
   same: ['기운이 몰리는 배치이니 ', '같은 성질이 겹치니 ', '힘이 한쪽으로 쏠리니 ']
 };
 
-function fill(tpl, s) {
-  return tpl.replace(/\{(\w+)\}/g, (_, k) => (k in s ? s[k] : `{${k}}`));
-}
-
 export function interpret(z, t, zi, ci) {
   const rel = relation(t.elem, z.elem);
   const yRel = relation(YEAR.elem, z.elem);
@@ -122,7 +120,7 @@ export function interpret(z, t, zi, ci) {
     rel, relLabel: REL_LABEL[rel], relShort: REL_SHORT[rel],
     yearTie: tie,
     headline: `${z.name}띠 × ${t.ko} — ${REL_SHORT[rel]}`,
-    summary: `${z.name}띠(${z.ji}·${z.elem})의 바탕에 ${t.ko} 카드(${t.elem})가 겹치면 ${REL_LABEL[rel]}가 됩니다. ${t.keys.join(' · ')}이 이 조합의 주제입니다.`,
+    summary: `${z.name}띠(${z.ji}·${z.elem})의 바탕에 ${t.ko} 카드(${t.elem})가 겹치면 ${REL_LABEL[rel]}가 됩니다. ${t.keys.join(' · ')}${josa(t.keys[t.keys.length - 1], '이')} 이 조합의 주제입니다.`,
     saju: `${z.temper} 태어난 시로는 ${z.hour}, 절기로는 ${z.season}(${z.month})에 해당하는 기운입니다. 음양으로는 ${z.yin === '陽' ? '양(陽)이라 밖으로 나가는 힘이 먼저' : '음(陰)이라 안으로 모으는 힘이 먼저'} 섭니다.`,
     tarot: `${t.flow} 이 카드가 정방향으로 들어오면 ${t.advice} 뒤집혀 들어오면 ${t.warn}`,
     combine: fill(pick(COMBINE[rel], seed), slot),

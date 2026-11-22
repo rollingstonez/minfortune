@@ -9,6 +9,7 @@ import { ZODIAC } from './data/zodiac.mjs';
 import { TAROT } from './data/tarot.mjs';
 import { interpret, relation, REL_LABEL, REL_SHORT, YEAR } from './lib/interpret.mjs';
 import { layout, INFO, esc } from './lib/templates.mjs';
+import { darkLayout } from './lib/dark.mjs';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const root = resolve(here, '..');
@@ -264,16 +265,166 @@ ${order.filter(r => groups[r]).map(r => `    <h3>${esc(REL_LABEL[r])}</h3>
   };
 }
 
+
+/* ── 단계별 리딩 ─────────────────────────────────────────────── */
+function reading() {
+  const body = `<div class="rail" id="rail"><b></b><b></b><b></b><b></b><b></b></div>
+<div class="rail-l" id="railL">민원장 철학원 · 사주와 타로를 겹쳐 읽습니다</div>
+<div class="wrap">
+
+  <section class="stage on" id="s-gate">
+    <div class="eyebrow">${INFO.since}년 개원 · 종로 적선동 3대 철학관</div>
+    <h1>운명의 문을<br>열어드립니다</h1>
+    <p class="lead">생년월일시를 넣으면 <strong>만세력</strong>이 펼쳐지고, 그 위에 <strong>타로 세 장</strong>을 올립니다.
+      사주의 세 자리(띠·일간·월지)와 카드의 오행이 생(生)하는지 극(剋)하는지를 따져 결론까지 단계로 보여 드립니다.</p>
+    <p class="muted" style="margin-top:14px">민원장은 오랜 연구를 통해 국내 최초로 사주와 타로를 연결해 운세를 풀어 왔습니다.
+      이 화면은 그 방식을 규칙으로 옮긴 것입니다.</p>
+    <div class="acts"><button class="btn" id="go-birth">시작하기 →</button>
+      <a class="btn ghost" href="${BASE}/matrix">264 매트릭스 먼저 보기</a></div>
+    <div class="rule"></div>
+    <div class="links">
+      <a href="${BASE}"><span class="t">읽을거리 300편</span><span class="d">띠별 · 카드별 해설</span></a>
+      <a href="${BASE}/about"><span class="t">민원장 소개</span><span class="d">적선동에서 야탑까지</span></a>
+    </div>
+  </section>
+
+  <section class="stage" id="s-birth">
+    <div class="eyebrow">1단계 · 생년월일</div>
+    <h1>태어난 때를<br>알려 주세요</h1>
+    <p class="lead">양력으로 넣어 주세요. 사주의 해는 1월 1일이 아니라 <strong>입춘</strong>부터 바뀌고,
+      달은 <strong>절기</strong>로 갈립니다. 그 경계는 자동으로 계산합니다.</p>
+    <div class="panel">
+      <div class="field"><label for="date">생년월일 (양력)</label><input type="date" id="date" min="1920-01-01" max="2030-12-31"></div>
+      <div class="field"><label for="time">태어난 시각</label><input type="time" id="time">
+        <label class="chk"><input type="checkbox" id="noTime"> 시각을 모릅니다 (시주 없이 봅니다)</label></div>
+      <div class="field"><label>성별 <span style="color:var(--dim)">— 대운 방향을 정하는 데 씁니다</span></label>
+        <div class="seg" id="sexseg">
+          <button type="button" data-v="M" aria-pressed="true">남자</button>
+          <button type="button" data-v="F" aria-pressed="false">여자</button></div></div>
+      <div class="err" id="birthErr"></div>
+    </div>
+    <p class="muted" style="margin-top:12px">입력한 값은 이 브라우저 안에서만 계산됩니다. 서버로 보내지 않고 저장하지도 않습니다.</p>
+    <div class="acts"><button class="btn" id="go-manse">만세력 펼치기 →</button></div>
+  </section>
+
+  <section class="stage" id="s-manse"></section>
+
+  <section class="stage" id="s-draw">
+    <div class="eyebrow">3단계 · 카드</div>
+    <h1>세 장을 뽑습니다</h1>
+    <p class="lead">첫 장은 <strong>타고난 바탕</strong>(띠), 둘째 장은 <strong>지금의 나</strong>(일간),
+      셋째 장은 <strong>들어오는 자리</strong>(월지)에 놓입니다. 어느 카드가 나올지는 뽑은 뒤에 정해집니다.</p>
+    <div class="deck" id="deck"></div>
+    <p class="muted" id="drawHint" style="text-align:center"></p>
+    <div class="slots" id="slots"></div>
+    <div class="acts"><button class="btn" id="go-cross" disabled>사주 위에 올리기 →</button>
+      <button class="btn ghost" id="reshuffle">다시 섞기</button></div>
+  </section>
+
+  <section class="stage" id="s-cross"></section>
+  <section class="stage" id="s-result"></section>
+
+  <div class="disc">이 화면의 해석은 12지와 타로 메이저에 배속한 오행의 생극(生剋)을 규칙으로 삼아 자동 생성된 일반론입니다.
+    만세력은 천문 계산으로 절기를 구하지만 절입 시각은 ±10분가량 오차가 있을 수 있어, 경계 출생은 따로 표시합니다.
+    의료·법률·투자 판단의 근거로 쓸 수 없으며, 선택과 책임은 본인에게 있습니다.</div>
+</div>`;
+
+  const desc = `생년월일시를 넣으면 만세력 네 기둥이 펼쳐지고, 타로 세 장을 사주 위에 올려 생극으로 읽어 결론까지 단계로 보여 드립니다. ${INFO.since}년 개원 ${INFO.name}.`;
+  return {
+    path: '/reading',
+    html: darkLayout({
+      site: SITE, base: BASE, path: '/reading',
+      title: `사주 × 타로 단계별 리딩 — 만세력부터 결론까지 | ${INFO.name}`, desc: trim(desc, 158),
+      keywords: '사주 타로, 만세력, 무료 사주, 사주 네 기둥, 일간, 십신, 대운, 타로 3장, 분당 야탑 사주, 민원장 철학원',
+      ld: [BIZ, {
+        '@context': 'https://schema.org', '@type': 'WebApplication',
+        name: '사주 × 타로 단계별 리딩', applicationCategory: 'LifestyleApplication',
+        operatingSystem: 'Web', inLanguage: 'ko-KR', description: trim(desc, 158),
+        offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' }, publisher: author
+      }],
+      body,
+      script: `<script type="module" src="${BASE}/assets/reading.js"></script>`
+    })
+  };
+}
+
+/* ── 264 매트릭스 ────────────────────────────────────────────── */
+// 칸 기호: 카드가 나를 생하면 ↑, 내가 카드를 다루면 ◆, 같으면 ＝,
+//          내가 카드로 기운을 내주면 ↓, 카드가 나를 누르면 ✕
+const MX_SIGN = { support: '↑', command: '◆', same: '＝', drain: '↓', pressure: '✕' };
+function matrix() {
+  const head = TAROT.map(t => `<th><span style="display:block">${t.num}</span>${t.ko.length > 4 ? t.ko.slice(0, 2) + '…' : t.ko}</th>`).join('');
+  const rows = ZODIAC.map(z => {
+    const cells = TAROT.map(t => {
+      const r = relation(t.elem, z.elem);
+      return `<td class="c-${r}"><a href="${BASE}/saju-tarot/${z.slug}-${t.slug}" title="${z.name}띠 × ${t.ko} — ${REL_LABEL[r]}" aria-label="${z.name}띠 × ${t.ko} ${REL_SHORT[r]}">${MX_SIGN[r]}</a></td>`;
+    }).join('');
+    return `<tr><th><a href="${BASE}/ddi/${z.slug}">${z.name}띠<br><span style="font-size:.7rem;color:var(--dim)">${z.ji}·${z.elem}</span></a></th>${cells}</tr>`;
+  }).join('\n      ');
+
+  const legend = ['support', 'command', 'same', 'drain', 'pressure']
+    .map(r => `<span><i style="background:var(--m-${r})"></i><b style="color:var(--paper);font-weight:400">${MX_SIGN[r]}</b> ${REL_LABEL[r]}</span>`).join('');
+
+  const body = `<div class="wrap">
+  <div class="eyebrow">12띠 × 메이저 22장</div>
+  <h1>264가지 조합 지도</h1>
+  <p class="lead">가로는 타로 메이저 22장, 세로는 12띠입니다. 칸의 색은 카드의 오행이 띠의 오행과 맺는 관계입니다.
+    칸을 누르면 그 조합의 해설로 들어갑니다.</p>
+  <div class="legend">${legend}</div>
+  <div class="mx"><table>
+    <thead><tr><th style="text-align:left">띠 \\ 카드</th>${head}</tr></thead>
+    <tbody>
+      ${rows}
+    </tbody>
+  </table></div>
+  <p class="muted" style="margin-top:12px">가로로 밀어서 보세요. 한 줄(띠)을 따라가면 같은 사람에게 22장이 각각 어떻게 다르게 들어오는지 보이고,
+    한 칸(카드)을 세로로 보면 같은 카드가 띠에 따라 어떻게 뒤집히는지 보입니다.</p>
+  <div class="acts">
+    <a class="btn" href="${BASE}/reading">내 사주로 직접 해보기 →</a>
+    <a class="btn ghost" href="${BASE}">띠별·카드별 해설 300편</a>
+  </div>
+  <div class="disc">칸의 관계는 12지의 오행과 타로 메이저에 배속한 오행의 생극(生剋)으로 자동 판정한 것입니다.
+    실제 상담은 여덟 글자를 모두 보고 판단합니다.</div>
+</div>`;
+
+  const desc = `12띠와 타로 메이저 22장의 264가지 조합을 오행 생극 관계로 한 장에 펼친 지도. 칸을 누르면 해당 해설로. ${INFO.since}년 개원 ${INFO.name}.`;
+  return {
+    path: '/matrix',
+    html: darkLayout({
+      site: SITE, base: BASE, path: '/matrix',
+      title: `사주 × 타로 264 조합 매트릭스 | ${INFO.name}`, desc: trim(desc, 158),
+      keywords: '사주 타로 매트릭스, 띠별 타로, 타로 22장, 오행 생극, 264 조합, 민원장 철학원',
+      ld: [{ '@context': 'https://schema.org', '@type': 'CollectionPage',
+             name: '사주 × 타로 264 조합 매트릭스', description: trim(desc, 158),
+             inLanguage: 'ko-KR', publisher: author }],
+      body
+    })
+  };
+}
+
 /* ── 홈 ──────────────────────────────────────────────────────── */
 function home() {
   const body = `    <p class="lead">${INFO.since}년 종로 적선동에서 문을 연 민원장 철학원은
     오랜 연구를 통해 <strong>국내 최초로 사주와 타로를 연결해</strong> 운세를 풀어 왔습니다.
     이 섹션은 그 방식을 그대로 규칙으로 옮긴 것입니다. 12지(地支)의 오행과
     타로 메이저 22장에 배속한 오행이 서로 생(生)하는지 극(剋)하는지를 따져,
-    <strong>264가지 조합</strong>의 해설을 자동으로 펼쳐 둔 자료입니다.</p>
+    <strong>264가지 조합</strong>의 해설을 자동으로 펼쳐 둔 자료입니다.
+    읽을거리로 바로 보셔도 되고, <strong>내 생년월일로 직접</strong> 돌려 보셔도 됩니다.</p>
+
+    <section class="hero-cta">
+      <div class="hc-in">
+        <div class="hc-eyebrow">만세력 → 카드 → 교차 → 결론</div>
+        <h2>내 사주로 직접 해보기</h2>
+        <p>생년월일시를 넣으면 <strong>만세력 네 기둥</strong>이 펼쳐집니다.
+          그 위에 <strong>타로 세 장</strong>을 올려 띠·일간·월지와 하나씩 맞춰 보고,
+          다섯 가지 생극 관계로 결론까지 단계로 보여 드립니다.</p>
+        <a class="btn" href="${BASE}/reading">단계별 리딩 시작하기 →</a>
+        <a class="btn outline" href="${BASE}/matrix">264 조합 매트릭스 보기</a>
+      </div>
+    </section>
 
     <div class="finder" id="finder" data-base="${BASE}">
-      <h2>내 띠부터 찾기</h2>
+      <h2>띠만 빨리 찾기</h2>
       <p>태어난 해만 넣어도 됩니다. 생년월일을 넣으면 입춘 기준으로 보정합니다.</p>
       <div class="row">
         <input type="text" inputmode="numeric" placeholder="1978 또는 1978-05-12" aria-label="태어난 해 또는 생년월일">
@@ -408,15 +559,23 @@ await mkdir(join(OUT, 'assets'), { recursive: true });
 for (const f of await readdir(join(here, 'assets'))) {
   await copyFile(join(here, 'assets', f), join(OUT, 'assets', f));
 }
+// 브라우저에서 그대로 import 하는 엔진 모듈 (Node/브라우저 공용 순수 ESM)
+await mkdir(join(OUT, 'assets', 'engine'), { recursive: true });
+for (const [src, dst] of [
+  ['data/zodiac.mjs', 'zodiac.mjs'], ['data/tarot.mjs', 'tarot.mjs'],
+  ['lib/ko.mjs', 'ko.mjs'], ['lib/interpret.mjs', 'interpret.mjs'],
+  ['lib/solar.mjs', 'solar.mjs'], ['lib/manse.mjs', 'manse.mjs'],
+  ['lib/reading.mjs', 'reading.mjs'], ['lib/cards.mjs', 'cards.mjs']
+]) await copyFile(join(here, src), join(OUT, 'assets', 'engine', dst));
 
-const pages = [home(), about()];
+const pages = [home(), about(), reading(), matrix()];
 ZODIAC.forEach((z, zi) => pages.push(ddiHub(z, zi)));
 TAROT.forEach((t, ci) => pages.push(tarotHub(t, ci)));
 ZODIAC.forEach((z, zi) => TAROT.forEach((t, ci) => pages.push(detail(z, zi, t, ci))));
 for (const p of pages) await emit(p.path, p.html);
 
 const today = new Date().toISOString().slice(0, 10);
-const prio = p => (p === '' ? '0.9' : p === '/about' ? '0.8' : /^\/(ddi|tarot)\//.test(p) ? '0.7' : '0.6');
+const prio = p => (p === '' ? '0.9' : p === '/reading' ? '1.0' : p === '/matrix' ? '0.9' : p === '/about' ? '0.8' : /^\/(ddi|tarot)\//.test(p) ? '0.7' : '0.6');
 await writeFile(join(OUT, 'sitemap.xml'),
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
   urls.map(u => `  <url><loc>${SITE}${BASE}${u}</loc><lastmod>${today}</lastmod><changefreq>monthly</changefreq><priority>${prio(u)}</priority></url>`).join('\n') +
