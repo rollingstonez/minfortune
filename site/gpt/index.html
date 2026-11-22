@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f0e5">
+  <meta name="description" content="1987년부터 이어온 민원장 철학원의 사주와 타로를 결합한 AI 운세 해설">
+  <title>사주와 타로로 읽는 오늘의 나 | 민원장 철학원</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="민원장 철학원 홈">
+      <span class="brand-mark">민</span>
+      <span><b>민원장 철학원</b><small>명리와 타로로 읽는 삶의 흐름</small></span>
+    </a>
+    <a class="top-link" href="https://minfortune.kr/">철학원 소개 <span>↗</span></a>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span></span> MIN FORTUNE · AI READING</div>
+        <h1>흐름을 읽고,<br><em>마음을 비추다.</em></h1>
+        <p class="hero-lead">사주의 큰 흐름 위에 타로의 상징을 더해<br>지금 당신에게 필요한 이야기를 전합니다.</p>
+        <div class="credentials">
+          <div><strong>1987</strong><span>개원</span></div><i></i>
+          <div><strong>종로 적선동</strong><span>3대 철학관</span></div><i></i>
+          <div><strong>대한역술인협회</strong><span>부회장</span></div>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="sun"></div><div class="moon">☾</div>
+        <div class="card card-back"><span>命</span></div>
+        <div class="card card-front"><div class="card-star">✦</div><span>心</span><small>THE INNER LIGHT</small></div>
+        <span class="spark spark-a">✧</span><span class="spark spark-b">✦</span><span class="spark spark-c">·</span>
+      </div>
+      <div class="hero-note"><span class="note-line"></span> 40년 가까운 상담의 경험을, 당신의 질문 가까이에</div>
+    </section>
+
+    <section class="intro-band">
+      <div class="intro-inner"><span class="quote-mark">“</span><p>운세를 단정하기보다, <b>지금의 마음과 선택을 함께 살펴봅니다.</b></p><span class="band-caption">명리의 흐름 × 타로의 상징</span></div>
+    </section>
+
+    <section class="reading-section" id="reading">
+      <div class="section-heading"><div class="eyebrow"><span></span> YOUR READING</div><h2>오늘의 고민을 들려주세요</h2><p>입력하신 정보를 바탕으로 사주와 타로를 결합한 해설을 생성합니다.</p></div>
+      <div class="form-card" id="form-card">
+        <form id="reading-form">
+          <div class="field-row">
+            <label class="field"><span class="label-title">생년월일 <b>*</b></span><input required type="date" name="birthDate" autocomplete="bday"><small>사주의 기본 흐름을 살피는 데 사용합니다.</small></label>
+            <label class="field"><span class="label-title">태어난 시간 <span class="optional">선택</span></span><select name="birthTime"><option value="unknown">잘 모르겠어요</option><option value="00:00-01:30">자시 · 23:30–01:30</option><option value="01:30-03:30">축시 · 01:30–03:30</option><option value="03:30-05:30">인시 · 03:30–05:30</option><option value="05:30-07:30">묘시 · 05:30–07:30</option><option value="07:30-09:30">진시 · 07:30–09:30</option><option value="09:30-11:30">사시 · 09:30–11:30</option><option value="11:30-13:30">오시 · 11:30–13:30</option><option value="13:30-15:30">미시 · 13:30–15:30</option><option value="15:30-17:30">신시 · 15:30–17:30</option><option value="17:30-19:30">유시 · 17:30–19:30</option><option value="19:30-21:30">술시 · 19:30–21:30</option><option value="21:30-23:30">해시 · 21:30–23:30</option></select><small>시간을 모르면 비워도 괜찮습니다.</small></label>
+          </div>
+          <fieldset class="field topic-field"><legend class="label-title">가장 궁금한 주제 <b>*</b></legend><div class="topic-options">
+            <label><input type="radio" name="topic" value="love" checked><span><i>♡</i>연애·관계</span></label>
+            <label><input type="radio" name="topic" value="work"><span><i>↗</i>일·진로</span></label>
+            <label><input type="radio" name="topic" value="money"><span><i>◉</i>재물·사업</span></label>
+            <label><input type="radio" name="topic" value="self"><span><i>✳</i>나의 흐름</span></label>
+          </div></fieldset>
+          <label class="field question-field"><span class="label-title">마음에 걸리는 질문 <span class="optional">선택</span></span><textarea name="question" rows="3" maxlength="300" placeholder="예: 새로운 일을 시작해도 괜찮을지 고민돼요."></textarea><div class="field-foot"><small>개인 식별 정보나 민감한 내용은 적지 않아도 됩니다.</small><span id="char-count">0 / 300</span></div></label>
+          <label class="consent"><input type="checkbox" name="consent" required><span>입력 정보가 풀이 생성에 사용됨을 확인했습니다. 이 페이지는 자동 생성 콘텐츠를 제공하며, 정보는 이 브라우저에서만 처리됩니다.</span></label>
+          <button class="submit-button" type="submit"><span>나의 해설 받아보기</span><b>→</b></button>
+          <p class="privacy-note"><span>✧</span> 생년월일과 질문은 서버에 전송하거나 저장하지 않습니다.</p>
+        </form>
+      </div>
+      <div class="result-card hidden" id="result-card" aria-live="polite">
+        <div class="result-top"><div><div class="eyebrow"><span></span> YOUR READING</div><h2 id="result-title">당신을 위한 해설</h2><p id="result-date"></p></div><button id="reset-button" class="reset-button" type="button">다시 보기 ↺</button></div>
+        <div class="result-banner"><span class="result-symbol" id="result-symbol">☾</span><div><small>오늘의 타로 상징</small><strong id="card-name">별 · The Star</strong><p id="card-caption"></p></div></div>
+        <div class="reading-content" id="reading-content"></div>
+        <div class="result-disclaimer">이 해설은 입력 정보를 바탕으로 자동 생성된 참고용 콘텐츠입니다. 미래를 확정하거나 전문 상담·의료·법률·재무 조언을 대신하지 않습니다. 더 깊은 대면 상담은 <a href="https://minfortune.kr/">민원장 철학원</a>에 문의해 주세요.</div>
+        <button class="share-button" id="share-button" type="button">해설 링크 복사 <span>↗</span></button>
+      </div>
+    </section>
+
+    <section class="method-section"><div class="section-heading"><div class="eyebrow"><span></span> THE METHOD</div><h2>두 갈래의 지혜를 한 번에</h2></div><div class="method-grid"><article><span class="method-number">01</span><div class="method-icon">☯</div><h3>사주명리</h3><p>태어난 날짜를 바탕으로 기질과 삶의 흐름을 상징적으로 살펴봅니다.</p></article><article><span class="method-number">02</span><div class="method-icon">✧</div><h3>타로의 상징</h3><p>질문에 맞춘 카드의 상징으로 지금의 마음과 시선을 비춰봅니다.</p></article><article><span class="method-number">03</span><div class="method-icon">⌁</div><h3>오늘의 해설</h3><p>두 관점을 엮어 지금 돌아볼 점과 작은 실천 방향을 전합니다.</p></article></div></section>
+
+    <section class="legacy-section"><div class="legacy-inner"><div class="legacy-stamp">民<br><small>1987</small></div><div><div class="eyebrow"><span></span> MIN FORTUNE · SINCE 1987</div><h2>한 사람의 삶을 듣는 마음으로</h2><p>종로 적선동에서 시작해 분당 야탑으로 이어진 민원장 철학원.<br>사주와 타로를 연결한 오랜 연구와 상담 경험을 바탕으로 이야기를 전합니다.</p><a href="https://minfortune.kr/" class="legacy-link">민원장 철학원 더 알아보기 <span>↗</span></a></div></div></section>
+  </main>
+  <footer><a class="footer-brand" href="https://minfortune.kr/">민원장 철학원</a><span>경기도 성남시 분당구 야탑로111번길 16 · 010-5750-3883</span><span>© Min Fortune · 자동 생성 풀이 콘텐츠</span><a href="https://minfortune.kr/">공식 사이트</a></footer>
+  <script src="app.js"></script>
+</body>
+</html>
