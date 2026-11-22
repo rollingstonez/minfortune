@@ -171,7 +171,7 @@ function renderReading(r,birthDate) {
   const container=el('reading-content');
   const lead=section('먼저 드리는 이야기',[r.wish,`지금은 단순히 운이 좋다·나쁘다로 나눌 때가 아닙니다. 당신의 강점이 어디에서 힘이 되고, 어떤 상황에서는 부담으로 바뀌는지를 알아차리는 것이 먼저입니다. 이번 풀이는 ${r.focus.label}에서 그 균형을 찾는 데 초점을 두었습니다.`],'민원장 철학원 온라인 사전 풀이');
   const saju=section('생년월일에서 읽는 기본 결',[r.first,r.second,`이 페이지는 출생 연도의 상징을 바탕으로 한 사전 풀이입니다. ${r.timeNote} 절기 기준의 월주와 일주까지 확인하는 정밀 만세력 풀이와 구분해 참고해 주세요.`],'사주 관점');
-  const chart=document.createElement('figure');chart.className='manse-figure';const image=document.createElement('img');image.src='/gpt/assets/manse-calendar.svg';image.alt='사주의 네 기둥과 음양의 흐름을 상징적으로 표현한 만세력 도해';const caption=document.createElement('figcaption');caption.textContent=`만세력은 태어난 연·월·일·시를 간지로 바꾸어 사주의 네 기둥을 살피는 기준입니다. 현재 결과에는 출생 연도의 상징만 반영되어 있습니다. ${r.timeNote}`;chart.append(image,caption);saju.append(chart);
+  const chart=document.createElement('figure');chart.className='manse-figure';const image=document.createElement('img');image.src='/gpt/manse-calendar.svg';image.alt='사주의 네 기둥과 음양의 흐름을 상징적으로 표현한 만세력 도해';const caption=document.createElement('figcaption');caption.textContent=`만세력은 태어난 연·월·일·시를 간지로 바꾸어 사주의 네 기둥을 살피는 기준입니다. 현재 결과에는 출생 연도의 상징만 반영되어 있습니다. ${r.timeNote}`;chart.append(image,caption);saju.append(chart);
   const cards=document.createElement('section');cards.className='report-section tarot-section';
   const cardEyebrow=document.createElement('span');cardEyebrow.className='report-eyebrow';cardEyebrow.textContent='타로 관점 · 두 장의 흐름';cards.append(cardEyebrow);
   const cardTitle=document.createElement('h3');cardTitle.textContent='지금의 마음과 다음에 취할 태도';cards.append(cardTitle);
