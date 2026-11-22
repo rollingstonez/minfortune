@@ -187,5 +187,5 @@ function renderReading(r,birthDate) {
   history.replaceState(null,'','#reading');
 }
 el('reset-button').addEventListener('click',()=>{el('result-card').classList.add('hidden');el('form-card').classList.remove('hidden');form.reset();updateContextOptions();el('char-count').textContent='0 / 500';el('reading').scrollIntoView({behavior:'smooth'});});
-el('share-button').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(location.href);el('share-button').textContent='페이지 주소를 복사했습니다 ✓';setTimeout(()=>el('share-button').textContent='결과 인쇄 / PDF 저장',1800);}catch{window.print();}});
+el('share-button').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(location.href);el('share-button').textContent='페이지 주소를 복사했습니다 ✓';setTimeout(()=>el('share-button').textContent='결과 링크 복사 ↗',1800);}catch{window.print();}});
 el('print-button').addEventListener('click',()=>window.print());
